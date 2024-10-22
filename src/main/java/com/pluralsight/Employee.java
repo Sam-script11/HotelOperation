@@ -1,5 +1,10 @@
 package com.pluralsight;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
 public class Employee {
     private double employeeID,payRate,hourseWorked,totalPay,regularHours,overTimeHours;
     private String name,department;
@@ -62,4 +67,15 @@ public class Employee {
     public double getOverTimeHours(){
         return (totalPay *1.5)*overTimeHours;
     }
+
+    public void punchTimeCard(double punchIN, double punchOut){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm a"); // formatting hours and minutes and PM or AM, (a is what creates AM or PM)
+        LocalTime punchInTime = LocalTime.now();
+        LocalTime punchOutTime = LocalTime.now();
+
+
+        System.out.print( "Punch in: "+punchInTime.format(formatter) + " \n Punch Out: " + punchOutTime.format(formatter));
+
+    }
+
 }

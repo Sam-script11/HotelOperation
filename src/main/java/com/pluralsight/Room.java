@@ -53,15 +53,21 @@ public class Room{
         isAvailable = available;
     }
 
-    public static void checkIn(){
+    public static boolean checkIn(String dirty){
 
+
+        return true;
     }
-    public static void checkOut(){
-
-
-
+    public static boolean checkOut(String clean){
+       return true;
     }
     public static void cleanRoom(){
+        if (checkIn("Dirty")){
+            System.out.println("occupied");
+
+        } else{
+            checkOut("Needs to be cleaned");
+        }
 
     }
 }
